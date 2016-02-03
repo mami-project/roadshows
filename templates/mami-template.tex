@@ -1,0 +1,378 @@
+%%%%%
+%%%%% MAMI LaTeX Template
+%%%%% Mirja Kuehlewind <mirja.kuehelwind@tik.ee.ethz.ch>
+%%%%% Based on a design by Alvaro Armenteros and a template by Esa Hyttiä
+%%%%%
+
+\documentclass[a4paper,twoside,11pt]{report}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Template Element Definitions
+% Change these for each deliverable 
+%
+
+\newcommand{\deliverabletitle}{PUT TITLE HERE}
+\newcommand{\deliverabletitleshort}{short title for header}
+\newcommand{\deliverablenumber}{1.1}
+\newcommand{\deliverablerevision}{0.1}
+\newcommand{\deliverablerevdate}{31 June 2016}
+\newcommand{\deliverableduedate}{31 June 2016}
+\newcommand{\deliverableactualdate}{31 June 2016}
+\newcommand{\deliverablediss}{Public}
+
+\newcommand{\deliverableauthorlist}{
+& ETH & M. K\"uhlewind (ed.) \\
+& TID & ? \\
+& ULg & ? \\
+& UNIABDN & ? \\
+& ZHAW & ? \\
+& SRL & ? \\
+& ALCATEL & ? \\
+}
+\newcommand{\deliverablechangelist}{
+0.1  & 29 Jan 2016 & M. K\"uhlewind (ETH) & template \\
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LATEX MACHINERY BEGINS HERE - NO USER-SERVICEABLE PARTS INSIDE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document geometry
+%
+
+\setlength{\textheight}{230mm}
+\setlength{\textwidth}{160mm}
+\setlength{\voffset}{-25mm}
+\setlength{\oddsidemargin}{0mm}
+\setlength{\evensidemargin}{0mm}
+\addtolength{\parskip}{0.33\baselineskip}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Package definitions
+%
+
+\usepackage{helvet}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{chngcntr}
+\usepackage{longtable}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{acronym}
+\usepackage{listings}
+\usepackage{balance}
+\usepackage{array}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Font definitions
+%
+\renewcommand\familydefault{\sfdefault} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Heading style definitions
+%
+
+\setcounter{secnumdepth}{4}
+
+\makeatletter
+\renewcommand{\chapter}{\@startsection{chapter}{0}{0mm}
+  {\baselineskip}%
+  {\baselineskip}{\clearpage\LARGE\bf\color{black}}}
+\renewcommand{\section}{\@startsection{section}{1}{0mm}
+  {\baselineskip}%
+  {\baselineskip}{\LARGE\color{black}}}%
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}
+  {\baselineskip}%
+  {\baselineskip}{\Large\color{black}}}%
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}
+  {\baselineskip}%
+  {\baselineskip}{\large\color{black}}}%
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Table of contents styling
+%
+% Finamore: added dotted lines also for chapters
+% solution found at http://tex.stackexchange.com/questions/62438/how-to-add-leaders-to-table-of-contents-without-tocloft
+\makeatletter
+\renewcommand*\l@chapter[2]{%
+    \ifnum \c@tocdepth >\m@ne
+        \addpenalty{-\@highpenalty}%
+        \vskip 1.0em \@plus\p@
+        \setlength\@tempdima{1.5em}%
+        \begingroup
+        \parindent \z@ \rightskip \@pnumwidth
+        \parfillskip -\@pnumwidth
+        \leavevmode %\bfseries
+        \advance\leftskip\@tempdima
+        \hskip -\leftskip
+        #1\nobreak
+        \xleaders\hbox{$\m@th
+        \mkern \@dotsep mu\hbox{.}\mkern \@dotsep mu$}\hfill%
+        \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
+        \penalty\@highpenalty
+        \endgroup
+    \fi}
+\renewcommand*\l@section{\@dottedtocline{1}{1.5em}{2.3em}}
+\renewcommand*\l@subsection{\@dottedtocline{2}{3.8em}{3.2em}}
+\renewcommand*\l@subsubsection{\@dottedtocline{3}{7.0em}{4.1em}}
+\renewcommand*\l@paragraph{\@dottedtocline{4}{10em}{5em}}
+\renewcommand*\l@subparagraph{\@dottedtocline{5}{12em}{6em}}
+\renewcommand*{\@dotsep}{1}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Header and footer definitions
+%
+
+\setlength{\headheight}{52pt}
+\setlength{\footskip}{47pt}
+\renewcommand{\headrulewidth}{0pt}
+\pagestyle{fancyplain}
+
+\fancyhead[L]{\textsf{H2020-ICT-688421 MAMI \\ D\deliverablenumber \deliverabletitleshort}}
+\fancyhead[R]{\setlength{\unitlength}{1mm}
+\begin{picture}(0,0)
+  \put(-60,-4){\includegraphics[width=70mm]{../logos/EC-H2020.png}}
+\end{picture}
+}
+\fancyfoot[L]{\setlength{\unitlength}{1mm}
+\begin{picture}(0,0)
+  \put(0,5){\includegraphics[width=15mm]{../logos/mami-bauhaus-short.pdf}}
+\end{picture}
+}
+\fancyfoot[C]{\vspace{-10mm}\textsf{\thepage\hspace{0.3em}of \pageref{LastPage}}}
+\fancyfoot[R]{\vspace{-10mm}\textsf{Revision \deliverablerevision\hspace{0.3em}of \deliverablerevdate}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Miscellaneous document adjustments go here
+
+% Call the bibilography a references section
+\renewcommand*{\bibname}{References}
+
+% Number figures and tables globally
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define some colors
+
+\definecolor{sangria}{rgb}{0.57, 0.0, 0.04}
+\definecolor{aurometalsaurus}{rgb}{0.43, 0.5, 0.5}
+\definecolor{arsenic}{rgb}{0.23, 0.27, 0.29}
+
+\definecolor{architecuregreen}{RGB}{135, 222, 170}
+\definecolor{experimentationblue}{RGB}{128, 179, 255}
+\definecolor{measurementred}{RGB}{255, 128, 128}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define some useful commands
+ %\EDNOTE{who}{what} - place an editor's note in the document.
+ %\INNOTE{who}{what} - place an inline note in the document
+
+\newcommand{\EDNOTE}[2]{
+  \par\large\centerline{
+  \mbox{
+  \begin{tabular}{ll}
+    \textsf{\textbf{#1}} & 
+    \fbox{
+    \begin{minipage}{0.6\linewidth}
+      \em\color{red} #2
+    \end{minipage}
+    }
+  \end{tabular}
+  }}
+  \par\vspace{4mm}
+}
+
+\newcommand{\INNOTE}[2]{[\textsf{\textbf{#1}}: {\em\color{red} #2}]}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define acronyms - use with \ac{MAMI} or plural \acp{MAMI} (if there is more 
+% than one MAMI project)
+
+\acrodef{MAMI}{Measurement and Archticture for a Middleboxed Internet}
+\acrodef{AQM}{Active Queue Management}
+\acrodef{ECN}{Explicit Congestion Notification}
+\acrodef{EWMA}{Exponential Weighted Moving Average}
+\acrodef{FEC}{Forward Error Correction}
+\acrodef{IETF}{Internet Engineering Task Force}
+\acrodef{RED}{Random Early Detection}
+\acrodef{RTT}{Round-Trip Time}
+\acrodef{TCP}{Transmission Control Protocol}
+\acrodef{TTL}{Time-To-Live}
+\acrodef{NAT}{Network Address Translation}
+\acrodef{UDP}{User Datagram Protocol}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Front page
+%
+\begin{document}
+\thispagestyle{empty}
+\parindent0pt
+
+\newcolumntype{R}[1]{>{\raggedleft}p{#1}}
+
+\begin{tabular}{R{130mm} p{25mm}}
+    \vspace{0pt} 
+    {\bf\small\color{arsenic} H2020 European Union funding \\ for Research \& Innovation}
+    & 
+    \vspace{0pt}
+    \includegraphics[width=25mm]{../logos/eu_flag_small.jpg}
+\end{tabular}
+
+\vspace{20mm}
+
+\includegraphics[width=90mm]{../logos/mami-bauhaus.pdf}
+
+\vspace{3mm}
+\centerline{\rule{0em}{1.5em}\LARGE\bf\color{black}Measurement and Archticture for a Middleboxed Internet}
+\vspace{5mm}
+\centerline{\rule{0em}{1.5em}\bf\Large\color{arsenic}H2020-ICT-688421}
+
+\vspace{20mm}
+
+\begin{centering}
+\fbox{
+  \begin{minipage}{\linewidth}
+    \vspace*{1mm}
+    \center
+    \huge\em\bf\color{sangria}\deliverabletitle
+  \end{minipage}
+}
+
+\vspace{2mm}
+
+\fbox{
+  \begin{minipage}{\linewidth}
+      \large\textsf{
+        \begin{tabular}{lll}
+	  \textbf{Author(s):}
+	  \deliverableauthorlist	
+	\end{tabular}}
+  \end{minipage}
+}
+
+\vspace{5mm}
+
+\mbox{\begin{minipage}{\linewidth}
+    \textsf{\begin{tabular}{ll}
+	\textbf{Document Number:}           & D\deliverablenumber \\
+	\textbf{Revision:}         	    & \deliverablerevision \\
+	\textbf{Revision Date:}             & \deliverablerevdate\\
+	\textbf{Due Date of Delivery:}      & \deliverableduedate\\
+	\textbf{Actual Date of Delivery:}   & \deliverableactualdate\\
+	\textbf{Dissemination Level:}       & \deliverablediss\\
+    \end{tabular}}
+
+\end{minipage}
+}
+
+\clearpage
+
+ \mbox{\begin{minipage}{\linewidth}
+ \addcontentsline{toc}{chapter}{Disclaimer}
+ {\LARGE\em\bf\color{black}{Disclaimer}}
+ 
+ \vspace{10mm}
+ \em{
+ The information, documentation and figures available in this deliverable are written by the MAMI
+ consortium partners under EC co-financing (project H2020-ICT-688421) and does not necessarily
+ reflect the view of the European Commission.
+\\
+\\
+ The information in this document is provided ``as is'', and no guarantee or warranty is given that
+ the information is fit for any particular purpose. The user uses the information at its sole risk and
+ liability.
+ }
+ \end{minipage}}
+ 
+ 
+ \end{centering}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Table of contents
+%
+\clearpage
+\tableofcontents
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Change record
+%
+\clearpage
+
+\chapter*{Document change record}
+\addcontentsline{toc}{chapter}{Document change record}
+
+\noindent
+\begin{tabular}{p{16mm}|p{22mm}|p{25mm}|p{89mm}}
+\bf Version & \bf Date & \bf Author(s) & \bf Description \\
+\hline
+\deliverablechangelist
+\end{tabular}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% CONTENT BEGINS HERE - YOU CAN START EDITING NOW
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Executive summary
+%
+%\clearpage
+%
+\chapter*{Executive Summary}
+\addcontentsline{toc}{chapter}{Executive Summary}
+
+Put text here
+
+
+\chapter{Introduction}
+
+% Use EDNOTE to place a colored signed editor's note in the text.
+% Future revisions may remove this from the print version
+\EDNOTE{ETH}{Frontmatter goes here.}
+
+\chapter{Main Chapter}
+
+\EDNOTE{ETH}{Describe something useful here}
+
+\begin{enumerate}
+
+    \item Maybe even list some stuff
+
+\end{enumerate}
+
+\section{Section}
+
+\subsection{Subsection}
+
+\chapter{Conclusion}
+
+\EDNOTE{ETH}{Summarize what we know already.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% CONTENT ENDS HERE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliographystyle{abbrv}
+\small
+
+% Bibtex files that contain the references. Use it as follows, omitting the
+% file extension
+%\bibliography{file1,file2,file3}
+\bibliography{mami}
+\end{document}
