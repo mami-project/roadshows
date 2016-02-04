@@ -30,7 +30,7 @@
 & ALCATEL & ? \\
 }
 \newcommand{\deliverablechangelist}{
-0.1  & 29 Jan 2016 & M. K\"uhlewind (ETH) & template \\
+0.1  & 29/01/16 & M. K\"uhlewind (ETH) & template \\
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -70,6 +70,7 @@
 \usepackage{listings}
 \usepackage{balance}
 \usepackage{array}
+\usepackage{hyperref}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Font definitions
@@ -146,7 +147,7 @@
 }
 \fancyfoot[L]{\setlength{\unitlength}{1mm}
 \begin{picture}(0,0)
-  \put(0,5){\includegraphics[width=15mm]{../logos/mami-bauhaus-short.pdf}}
+  \put(0,2){\includegraphics[width=15mm]{../logos/mami-bauhaus-short.pdf}}
 \end{picture}
 }
 \fancyfoot[C]{\vspace{-10mm}\textsf{\thepage\hspace{0.3em}of \pageref{LastPage}}}
@@ -226,15 +227,15 @@
     {\bf\small\color{arsenic} H2020 European Union funding \\ for Research \& Innovation}
     & 
     \vspace{0pt}
-    \includegraphics[width=25mm]{../logos/eu_flag_small.jpg}
+    \includegraphics[width=26mm]{../logos/eu_flag_small.jpg}
 \end{tabular}
 
 \vspace{20mm}
 
-\includegraphics[width=90mm]{../logos/mami-bauhaus.pdf}
+\hspace{-3mm}\includegraphics[width=90mm]{../logos/mami-bauhaus.pdf}
 
-\vspace{3mm}
-\centerline{\rule{0em}{1.5em}\LARGE\bf\color{black}Measurement and Archticture for a Middleboxed Internet}
+\vspace{5mm}
+\centerline{\rule{0em}{1.5em}\LARGE\bf\color{black}Measurement and Architecture for a Middleboxed Internet}
 \vspace{5mm}
 \centerline{\rule{0em}{1.5em}\bf\Large\color{arsenic}H2020-ICT-688421}
 
@@ -276,6 +277,9 @@
 \end{minipage}
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Disclaimer
+%
 \clearpage
 
  \mbox{\begin{minipage}{\linewidth}
@@ -314,7 +318,7 @@
 \addcontentsline{toc}{chapter}{Document change record}
 
 \noindent
-\begin{tabular}{p{16mm}|p{22mm}|p{25mm}|p{89mm}}
+\begin{tabular}{R{13mm}|p{15mm}|p{40mm}|p{84mm}}
 \bf Version & \bf Date & \bf Author(s) & \bf Description \\
 \hline
 \deliverablechangelist
