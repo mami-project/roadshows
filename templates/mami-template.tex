@@ -11,13 +11,13 @@
 % Change these for each deliverable 
 %
 
-\newcommand{\deliverabletitle}{PUT TITLE HERE}
+\newcommand{\deliverabletitle}{Put Title Here}
 \newcommand{\deliverabletitleshort}{short title for header}
 \newcommand{\deliverablenumber}{1.1}
 \newcommand{\deliverablerevision}{0.1}
-\newcommand{\deliverablerevdate}{31 June 2016}
-\newcommand{\deliverableduedate}{31 June 2016}
-\newcommand{\deliverableactualdate}{31 June 2016}
+\newcommand{\deliverablerevdate}{30 June 2016}
+\newcommand{\deliverableduedate}{30 June 2016}
+\newcommand{\deliverableactualdate}{30 June 2016}
 \newcommand{\deliverablediss}{Public}
 
 \newcommand{\deliverableauthorlist}{
@@ -142,7 +142,7 @@
 \fancyhead[L]{\textsf{H2020-ICT-688421 MAMI \\ D\deliverablenumber \deliverabletitleshort}}
 \fancyhead[R]{\setlength{\unitlength}{1mm}
 \begin{picture}(0,0)
-  \put(-60,-4){\includegraphics[width=70mm]{../logos/EC-H2020.png}}
+  \put(-70,-4){\includegraphics[width=70mm]{../logos/EC-H2020.png}}
 \end{picture}
 }
 \fancyfoot[L]{\setlength{\unitlength}{1mm}
@@ -166,9 +166,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Define some colors
 
-\definecolor{sangria}{rgb}{0.57, 0.0, 0.04}
-\definecolor{aurometalsaurus}{rgb}{0.43, 0.5, 0.5}
-\definecolor{arsenic}{rgb}{0.23, 0.27, 0.29}
+\definecolor{darkred}{RGB}{128, 0, 0}
+\definecolor{darkgray}{RGB}{95, 95, 95}
 
 \definecolor{architecuregreen}{RGB}{135, 222, 170}
 \definecolor{experimentationblue}{RGB}{128, 179, 255}
@@ -224,7 +223,10 @@
 
 \begin{tabular}{R{130mm} p{26mm}}
     \vspace{0pt} 
-    {\bf\small\color{arsenic} H2020 European Union funding \\ for Research \& Innovation}
+    %{\bf\small\color{darkgray} H2020 European Union funding \\ for Research \& Innovation}
+    {\small\color{darkgray} This project has received funding from the European Union’s Horizon 2020 \\
+    research and innovation programme under grant agreement No 688421.}
+
     & 
     \vspace{0pt}
     \includegraphics[width=26mm]{../logos/eu_flag_small.jpg}
@@ -237,7 +239,7 @@
 \vspace{5mm}
 \centerline{\rule{0em}{1.5em}\LARGE\bf\color{black}Measurement and Architecture for a Middleboxed Internet}
 \vspace{5mm}
-\centerline{\rule{0em}{1.5em}\bf\Large\color{arsenic}H2020-ICT-688421}
+\centerline{\rule{0em}{1.5em}\bf\Large\color{darkgray}H2020-ICT-688421}
 
 \vspace{20mm}
 
@@ -246,9 +248,10 @@
   \begin{minipage}{\linewidth}
     \vspace*{1mm}
     \center
-    \huge\em\bf\color{sangria}\deliverabletitle
+    \huge\em\bf\color{darkred}\deliverabletitle
   \end{minipage}
 }
+%\centerline{\huge\em\bf\color{sangria}\deliverabletitle}
 
 \vspace{2mm}
 
