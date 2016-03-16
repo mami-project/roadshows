@@ -68,8 +68,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.6752427"
-     inkscape:cx="90.350623"
-     inkscape:cy="145.0652"
+     inkscape:cx="90.202847"
+     inkscape:cy="140.73893"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -90,7 +90,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -98,7 +98,7 @@
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-70.585338,-15.048359)">
+     transform="translate(-70.733114,-10.722084)">
     <path
        sodipodi:type="arc"
        style="fill:#ff8080;stroke:none"
@@ -107,7 +107,7 @@
        sodipodi:cy="136.97244"
        sodipodi:rx="104.76094"
        sodipodi:ry="104.76094"
-       d="m 299.06114,136.97244 a 104.76094,104.76094 0 1 1 -209.521879,0 104.76094,104.76094 0 1 1 209.521879,0 z"
+       d="m 299.06114,136.97244 c 0,57.85787 -46.90307,104.76094 -104.76094,104.76094 -57.85787,0 -104.760939,-46.90307 -104.760939,-104.76094 0,-57.857867 46.903069,-104.760938 104.760939,-104.760938 57.85787,0 104.76094,46.903071 104.76094,104.760938 z"
        transform="translate(-8.8061464,-11.489418)" />
     <g
        id="g5066"
