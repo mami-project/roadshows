@@ -1,0 +1,44 @@
+IQL is the query language of the path transparency observation and is based on S-Expressions
+using JSON syntax. We want interested people to be able to analyse our data using queries without
+them having to learn about our internal infrastructure and how the data is actually stored.
+This is also means that we can have multiple backends and/or switch backends without making
+queries obsolete. Further, since not all backends perform equally well for certain queries
+it would be possible to choose the most efficient backend for the type of query in case we decide
+to run multiple backends. In short: Analyzers can write queries that will still work no matter
+what happens behind the scenes. 
+
+From IQL perspective an observation is a measurement of a value for a given key where each type
+of measurement has a name. In the MAMI project this usually means that a condition was observed
+on a certain path where the condition is the name of the measurement, the path is the key of
+the measurement and the value is implicit. The name of the measurement determines the type of
+its value (different measurements can measure different types of values (Text/Numbers)).
+
+IQL does not have a notion of tables, relations or foreign keys. IQL makes no assumptions about
+how the observations are stored it just treats the complete data set as a set of tuples. 
+Observations can have additional attributes such as timestamps and any additional metadata required.
+
+IQL works as a translation layer translating queries in IQL to a backend's native language thus 
+the translation code needs to know how the observations are stored and what backends are available.
+The translator also performs type checking to ensure the validity of a query and that it can be
+translated to the backend's language.
+
+{"settings": {
+   "attribute" : "@full_path"
+ },
+
+ "query":
+ {"all":[
+   {"subtraction":[
+     {"simple":[
+       {"eq":["@name","ecn.connectivity.broken"]}
+     ]},
+     {"simple":[
+       {"or":[
+         {"eq":["@name","ecn.connectivity.works"]},
+         {"eq":["@name","ecn.connectivity.transient"]},
+         {"eq":["@name","ecn.connectivity.offline"]}
+       ]}
+     ]}
+   ]}
+ ]}
+}
