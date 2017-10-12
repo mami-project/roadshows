@@ -68,22 +68,37 @@ into observations in terms of these conditions and paths, which makes queries
 across hetereogeneous source data made by different measurement tools possible,
 as long as they are measuring the same aspects of the same features. 
 
-We achieve _repeatability_ by ensuring that each stage of a given result refers
-to the data it's based on, in terms of stable links to that data. The
-observation store is organized into _observation sets_, the results of running a
-specific analysis on a specific raw data file or other observation set. A
-query's metadata links to all the observation sets which answer it; these sets'
-metadata link in turn to the observation sets and analyses on which they are
-based, which eventually link to the raw data files from which the observations
-were normalized. Metadata for each analysis includes references to the specific
-commit of the analysis codebase which was used; given access to the raw data and
-source code repository, every observation can therefore be recreated from its
-antecedents. 
+We achieve _repeatability_ by ensuring that each stage of a given result stores
+its provenance, referring to the data it's based on in terms of stable links to
+that data. The observation store is organized into _observation sets_, the
+results of running a specific analysis on a specific raw data file or other
+observation set. A query's metadata links to all the observation sets which
+answer it; these sets' metadata link in turn to the observation sets and
+analyses on which they are based, which eventually link to the raw data files
+from which the observations were normalized. Metadata for each analysis includes
+references to the specific commit of the analysis codebase which was used; given
+access to the raw data and source code repository, every observation can
+therefore be recreated from its antecedents. 
+
+Normalization and analysis can happen on the server hosting the PTO itself, or
+remotely, by retrieving raw data and observations and posting the resulting
+observations to the observation store via the API. Since provenance is achieved
+through URL links, raw data and derived observations can even be dispersed among
+multiple instances of the PTO, allowing finer-grained control over possibly
+sensitive raw data.
 
 Public release of our new lightweight PTO will happen in the coming weeks. It is
 based on an implementation of a RESTful API in bare Go (i.e., without any web
 frameworks), with raw data storage backed by the filesystem, and observation
 storage in the venerable PostgreSQL RDBMS.
 
-[conclusion here]
+## Results
 
+As reported at [ANRW](https://irtf.org/anrw/2017/anrw17-final16.pdf) in Prague
+in July of this year, the normalization and refinement of analysis of path
+transparency measurements at scale offered by the PTO has already led to
+interesting insights about the nature of path transparency in the Internet.
+Impairments to the use of ECN, already found to be rare, appear to be dependent
+on the path between the source and destination primarily in jurisdictions with
+documented deployments of heterogeneous, TCP-intercepting Internet censorship
+infrastructure. 
