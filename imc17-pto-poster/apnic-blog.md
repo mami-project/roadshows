@@ -101,4 +101,9 @@ interesting insights about the nature of path transparency in the Internet.
 Impairments to the use of ECN, already found to be rare, appear to be dependent
 on the path between the source and destination primarily in jurisdictions with
 documented deployments of heterogeneous, TCP-intercepting Internet censorship
-infrastructure. 
+infrastructure. Impairment to ECN in the network is therefore most likely a side
+effect of deliberate interference with traffic, as opposed to a more difficult
+to debug transient accident of middlebox implementation, and therefore less
+risky to deploy.
+
+[conclusion goes here]
