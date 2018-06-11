@@ -177,6 +177,9 @@ class PTOQuerySpec:
         params['time_start'] = self._time_start
         params['time_end'] = self._time_end
 
+        if len(self._set_ids):
+            params['set'] = self._set_ids
+        
         if len(self._on_path):
             params['on_path'] = self._on_path
         
