@@ -1,0 +1,10 @@
+\begin{frame}
+  \frametitle{Problems PEP create}
+  \begin{itemize}
+    \item Typical middlebox, so the usual caveat applies (RFC6182):
+    \begin{itemize}
+      \item[] [\ldots] All these middleboxes \emph{optimize current applications at the expense of future applications.}  In effect, future applications will often need to behave in a similar fashion to existing ones, in order to increase the chances of successful deployment.  Further, \emph{the precise behavior of all these middleboxes is not clearly specified,} and implementation errors make matters worse, raising the bar for the deployment of new technologies
+    \end{itemize}
+    \item Nasty when it completely breaks the end-to-end path, but even nastier when the breakage is only partial: e.g., when it ends up "eating" unknown (to the box) TCP options
+  \end{itemize}
+\end{frame}
