@@ -1,13 +1,15 @@
 \begin{frame}
 \frametitle{Experiment two: the liar}
 
-Two concurrent downloads on the UE, i.e. two TCP greedy sender (non application limited).
+\begin{itemize}
+\item one way real-time audio (64kbps)
+\item two concurrent downloads on the UE, i.e. two TCP greedy sender (non application limited).
+\end{itemize}
 \vspace{.5cm}
-
 Control and experimental groups are as follows:
 \begin{itemize}
-\item control (CTL): no marking
-\item experimental (EXP): TFT configured to route one of the flows (the liar) onto the low-latency dedicated bearer
+\item control (CTL): TCP flows are not marked (they go through the default bearer) while the real-time audio flow is marked as low-latency and routed through the low-latency dedicated bearer
+\item experimental (EXP): TFT configured to route one of the TCP greedy flows (the liar) onto the low-latency dedicated bearer together with the real-time audio flow
 \end{itemize}
 
 \end{frame}
