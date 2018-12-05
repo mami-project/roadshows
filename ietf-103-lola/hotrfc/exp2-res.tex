@@ -1,0 +1,34 @@
+\begin{frame}
+\frametitle{Experiment two: results}
+
+\begin{center}
+  \begin{table}
+    \rowcolors{1}{RoyalBlue!20}{RoyalBlue!5}
+    \begin{tabular}{l | c | c }
+      run & honest & liar \\
+      \hline \hline
+      CTL & 24 & 25\\ 
+      EXP & 31 & 140\\
+    \end{tabular}
+    \caption{retransmissions}
+  \end{table}
+\end{center}
+
+Liar ends up retransmitting a lot more (+460\%) which implies a substantial decrease in throughput:
+
+\begin{center}
+  \begin{table}
+    \rowcolors{1}{RoyalBlue!20}{RoyalBlue!5}
+    \begin{tabular}{l | c | c }
+      run & honest & liar \\
+      \hline \hline
+      CTL & 2.01904 & 1.837216\\ 
+      EXP & 2.399816 & 1.332176\\
+    \end{tabular}
+    \caption{TCP flow throughput (Mbps)}
+  \end{table}
+\end{center}
+
+Liar gets -27.5\% throughput (honest gets a 18.85\% boost as a consequence)
+
+\end{frame}

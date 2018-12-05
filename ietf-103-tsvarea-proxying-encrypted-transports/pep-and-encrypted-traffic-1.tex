@@ -1,0 +1,11 @@
+\begin{frame}
+  \frametitle{PEP and encrypted traffic}
+  \begin{itemize}
+    \item Transport header protection (e.g., QUIC, IPsec ESP / AH) means transport headers can't be modified and/or forged, therefore PEP is completely inhibited:
+    \begin{itemize}
+      \item NO header compression
+      \item NO ACK tricks
+      \item NO rwin tricks
+    \end{itemize}
+  \end{itemize}
+\end{frame}

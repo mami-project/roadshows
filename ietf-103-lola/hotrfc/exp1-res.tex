@@ -1,0 +1,36 @@
+\begin{frame}
+\frametitle{Experiment one: results}
+
+\begin{center}
+  \begin{table}
+    \rowcolors{1}{RoyalBlue!20}{RoyalBlue!5}
+    \begin{tabular}{l | c | c | c | c }
+      run & mean & min & max & stddev \\
+      \hline \hline
+      CTL & 15.48 & 5 & 24 & 5.18609\\ 
+      EXP & 4.32 & 4 & 6 & 0.509243\\
+    \end{tabular}
+    \caption{real-time flow latency (ms)}
+  \end{table}
+CTL $\rightarrow$ EXP (mean): -72\%
+\end{center}
+
+
+\begin{center}
+  \begin{table}
+    \rowcolors{1}{RoyalBlue!20}{RoyalBlue!5}
+    \begin{tabular}{l | c }
+      run & throughput \\
+      \hline \hline
+      CTL & 3.8073840\\ 
+      EXP & 3.7925440\\
+    \end{tabular}
+    \caption{TCP flow throughput (Mbps)}
+  \end{table}
+CTL $\rightarrow$ EXP: -0.39\%
+\end{center}
+
+
+Increased stability of the real-time flow with negligible decrease in efficiency of the throughput seeking flow (and therefore of the RAN as a whole).
+
+\end{frame}

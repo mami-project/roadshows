@@ -1,0 +1,10 @@
+\begin{frame}
+  \frametitle{Mobile example}
+  \begin{itemize}
+    \item Quite often, the mobile link ``freezes'' from the point of view of the transport while its data link protocols are busy retransmitting after a loss\footnote{This is not a congestive loss, it's just wireless physics.}
+    \item The freeze may last longer than the typical RTT $\rightarrow$ sender thinks the path has lost its segment(s) $\rightarrow$ retransmits
+    \item This is the clich\'e of a spurious retransmission: the loss has been repaired by the link layer in the meantime
+    \item Here the PEP provides impedance matching at the point where wired and mobile links meet: it ACKs the sender in lieu of the UE, buffers the data and smooths it out to the UE when the link is back to normal
+    \item Without the PEP, the sender would throttle (throughput \& goodput decrease)
+  \end{itemize}
+\end{frame}
